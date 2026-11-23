@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="glass header">
+    <a class="brand" href="#">
+      <span class="brand-dot"></span> Orbit Weather
+    </a>
+    <form class="search" id="searchForm" role="search">
+      <input id="searchInput" type="text" placeholder="Search any city" aria-label="Search city" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <nav class="nav">
+      <a href="#">Globe</a>
+      <a href="#">Forecast</a>
+      <a href="#">About</a>
+      <button class="unit" id="unitBtn" aria-label="Switch temperature unit">°C</button>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <section class="glass intro">
+      <h1>See the weather anywhere on Earth</h1>
+      <p>Drag to turn the planet, scroll to zoom, and click any place to open its weather.</p>
+      <button class="ghost" id="rotateBtn">Pause rotation</button>
+    </section>
+
+    <div id="globe" aria-label="Interactive 3D Earth"></div>
+
+    <aside class="glass panel" id="panel">
+      <h2 id="placeName">Pick a location</h2>
+      <p class="coords" id="coords">Click on the globe to begin.</p>
+      <div class="temp" id="temp">--°</div>
+      <p class="cond" id="cond">Live weather arrives in the next section.</p>
+      <dl class="stats">
+        <div><dt>Humidity</dt><dd id="hum">--</dd></div>
+        <div><dt>Wind</dt><dd id="wind">--</dd></div>
+        <div><dt>Pressure</dt><dd id="pres">--</dd></div>
+        <div><dt>UV index</dt><dd id="uv">--</dd></div>
+      </dl>
+      <a class="details-btn disabled" id="detailsBtn" href="#" aria-disabled="true">Details</a>
+    </aside>
+  </main>
+
+  <footer class="glass footer">
+    <span>© 2026 Orbit Weather. College project.</span>
+    <span>Built with HTML, CSS and JavaScript</span>
+    <span>Weather data: Open-Meteo</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.27.2/dist/globe.gl.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

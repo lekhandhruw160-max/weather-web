@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Location details | Orbit Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="details.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="glass header">
+    <a class="brand" href="index.html"><span class="brand-dot"></span> Orbit Weather</a>
+    <nav class="nav">
+      <a class="back" href="index.html">Back to globe</a>
+      <button class="unit" id="unitBtn" aria-label="Switch temperature unit">°C</button>
+    </nav>
+  </header>
+
+  <main class="details">
+    <section class="glass hero">
+      <div>
+        <h1 id="place">Loading…</h1>
+        <p class="coords" id="meta"></p>
+        <p class="cond" id="cond"></p>
+      </div>
+      <div class="big" id="bigTemp">--°</div>
+    </section>
+
+    <p class="glass notice" id="notice" hidden></p>
+
+    <section class="tiles" id="tiles"></section>
+
+    <section class="charts">
+      <article class="glass card"><h2>Temperature, next 24 hours</h2><div class="cv"><canvas id="cTemp"></canvas></div></article>
+      <article class="glass card"><h2>Chance of rain, next 24 hours</h2><div class="cv"><canvas id="cRain"></canvas></div></article>
+      <article class="glass card"><h2>Wind speed, next 24 hours</h2><div class="cv"><canvas id="cWind"></canvas></div></article>
+      <article class="glass card"><h2>7-day high and low</h2><div class="cv"><canvas id="cWeek"></canvas></div></article>
+    </section>
+
+    <section class="glass card">
+      <h2>7-day forecast</h2>
+      <div class="days" id="days"></div>
+    </section>
+  </main>
+
+  <footer class="glass footer">
+    <span>© 2026 Orbit Weather. College project.</span>
+    <span>Weather data: Open-Meteo</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="details.js"></script>
+</body>
+</html>
